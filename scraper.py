@@ -3,7 +3,11 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from sklearn import linear_model
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
+import matplotlib.pyplot as plt
+import seaborn as seabornInstance
 
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
@@ -25,11 +29,27 @@ pd.options.mode.chained_assignment = None
 #df.to_csv('datasets/results.csv')
 
 
-df2 = pd.read_csv('datasets/incomplete.csv', float_precision='round_trip')
+df2 = pd.read_csv('datasets/statsRatings.csv', float_precision='round_trip')
 df2.drop("Unnamed: 0", axis=1, inplace=True)
 
-#print(df2)
+X = df2[['3P','3P%','2P','2P%','FT','FT%','TRB','AST','BLK']].values
+y = df2['ratings'].values
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=0)
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
+y_pred = regressor.predict(X_test)
+df3 = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
+print(df3)
+print(r2_score(y_test, y_pred))
+print(regressor.predict([[1.6, 0.401, 4.3, 0.532, 2.7, 0.754, 3.2, 2.7, 0.5]]))
 
+df3.plot(kind='bar',figsize=(16,10))
+plt.grid(which='major', linestyle='-', linewidth='0.5', color='green')
+plt.grid(which='minor', linestyle=':', linewidth='0.5', color='black')
+plt.show()
+
+#print(df2)
+'''
 reg = linear_model.LinearRegression()
 reg.fit(df2[['3P','3P%','2P','2P%','FT','FT%','TRB','AST','BLK','PTS']], df2.ratings)
 print(reg.coef_)
@@ -50,3 +70,4 @@ print(reg.predict([[1.7, 0.25, 4.6, 0.458, 2.8, 0.723, 7.6, 6.8, 0.1, 17]]))#mel
 print(reg.predict([[1.6, 0.401, 4.3, 0.532, 2.7, 0.754, 3.2, 2.7, 0.5, 16.1]]))
 
 print(r2_score([77, 97, 97, 96, 71, 83], [78.902689, 97.63361874, 92.62667606, 95.05080874,71.5880308, 82.08700444]))
+'''
