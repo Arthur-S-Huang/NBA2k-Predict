@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+#pageTitle {
+    text-align: center;
+    font-size: 60px;
+}
+#title img {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.4;
+}
+#nba {
+    color: white;
+    font-family: sans-serif;
+}
+#twoK {
+    color: red;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+#pred {
+    font-style: italic;
+    font-family: sans-serif;
+    color: blue;
+}
