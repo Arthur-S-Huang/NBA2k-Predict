@@ -44,7 +44,6 @@ body {
 .intro #introChild {
     border-style: solid;
     border-width: 4px;
-    border-color: white;
     border-image: linear-gradient(to bottom, purple, #33ffff);
     border-image-slice: 1;
     width: 80vw;
@@ -72,7 +71,68 @@ body {
     font-size: 1.5vw;
     font-weight: normal;
     width: 20vw;
-    bottom: 5vw;
-    left: 1vw;
+    bottom: 3vw;
+    left: 2vw;
     position: absolute;
+    color: #FAEBD7;
+}
+.prediction #week9 {
+    border-style: solid;
+    border-color: gray;
+    border-width: medium;
+    border-radius: 1vw;
+    width: 80vw;;
+    height: 7vw;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 4px;
+    top: 10vw;
+}
+.prediction #week9 p {
+    text-align: center;
+    padding-top: 1vw;
+    font-family: sans-serif;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: #FAEBD7;
+}
+.prediction img {
+    max-width: 101.21%;
+    height: auto;
+    opacity: 0.3;
+    position: relative;
+    z-index: -1;
+}
+.column {
+    float: left;
+    width: 20%;
+}
+form {
+    position: absolute;
+    left: 5vw;
+    top: 82vw;
+    height: 1vw;
+    max-width: 58vw;
+}
+.attribute {
+    font-size: 2vw;
+    font-family: monospace;
+    font-weight: normal;
+    color: white;
+}
+input[type=number] {
+    opacity: 0.6;
+    width: 10vw;
+    font-size: 1.5vw;
+    font-weight: bold;
+}
+#button {
+    position: relative;
+    left: 25vw;
+    opacity: 0.6;
+    width: 10vw;
+}
+#test {
+    color: white;
 }
