@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+body img{
+    z-index: -1;
+    max-width: 100%;
+    opacity: 0.6;
+}
+#predictionResult {
+    position: absolute;
+    color: white;
+    bottom: 20vw;
+    left: 14vw;
+    font-family: sans-serif;
+    width: 70vw;
+    line-height: 1.5;
+}

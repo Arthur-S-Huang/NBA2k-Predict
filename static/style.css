@@ -111,12 +111,12 @@ body {
 form {
     position: absolute;
     left: 5vw;
-    top: 82vw;
+    top: 92vw;
     height: 1vw;
-    max-width: 58vw;
+    max-width: 65vw;
 }
 .attribute {
-    font-size: 2vw;
+    font-size: 2.3vw;
     font-family: monospace;
     font-weight: normal;
     color: white;
@@ -124,14 +124,29 @@ form {
 input[type=number] {
     opacity: 0.6;
     width: 10vw;
-    font-size: 1.5vw;
+    font-size: 2vw;
     font-weight: bold;
+}
+input[type=number]:hover{
+    background: #33ffff;
 }
 #button {
     position: relative;
-    left: 25vw;
-    opacity: 0.6;
-    width: 10vw;
+    left: 69vw;
+    bottom: 5vw;
+    width: 18vw;
+    font-size: 3.5vw;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    border-radius: 0.5vw;
+}
+#button:default {
+    background: black;
+    opacity: 0.65;
+}
+#button:hover {
+    background: pink;
 }
 #test {
     color: white;
