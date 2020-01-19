@@ -28,7 +28,7 @@ pd.options.mode.chained_assignment = None
 #df.fillna(0, inplace=True)
 #df.to_csv('datasets/results.csv')
 
-
+#playground
 df2 = pd.read_csv('datasets/statsRatings.csv', float_precision='round_trip')
 df2.drop("Unnamed: 0", axis=1, inplace=True)
 
@@ -41,7 +41,7 @@ y_pred = regressor.predict(X_test)
 df3 = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 print(df3)
 print(r2_score(y_test, y_pred))
-print(regressor.predict([[1.6, 0.401, 4.3, 0.532, 2.7, 0.754, 3.2, 2.7, 0.5]]))
+print(regressor.predict([[3, 0.327, 6.4, 0.62, 7.4, 0.803, 9.6, 8.9, 0.1]]))
 
 df3.plot(kind='bar',figsize=(16,10))
 plt.grid(which='major', linestyle='-', linewidth='0.5', color='green')
